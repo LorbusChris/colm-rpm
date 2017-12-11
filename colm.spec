@@ -1,10 +1,10 @@
 Name:           colm
-Version:        0.13.0.4
-Release:        4%{?dist}
+Version:        0.13.0.5
+Release:        1%{?dist}
 Summary:        Programming language designed for the analysis of computer languages
 
 # aapl/ and some headers from src/ are the LGPLv2+
-License:        GPLv2+ and LGPLv2+
+License:        MIT and LGPLv2+
 URL:            https://www.colm.net/open-source/colm/
 Source0:        https://www.colm.net/files/%{name}/%{name}-%{version}.tar.gz
 
@@ -14,6 +14,7 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  make
+BuildRequires:  asciidoc
 
 # Unfortunately, upstream doesn't exist and not possible to find version
 Provides:       bundled(aapl)
@@ -51,6 +52,7 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %files
 %license COPYING
 %doc ChangeLog README
+%{_docdir}/%{name}/*.html
 %{_bindir}/%{name}
 %{_libdir}/lib%{name}-%{version}.so
 %dir %{_datadir}/vim
@@ -63,6 +65,11 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %{_includedir}/%{name}/
 
 %changelog
+* Sun Dec 10 2017 Jason Taylor <jtfas90@gmail.com> - 0.13.0.5-1
+- Upstream bugfix release
+- Correction to spec license add MIT license
+- Added asciidoc BuildRequires and docdir files
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.13.0.4-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
