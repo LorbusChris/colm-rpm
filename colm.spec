@@ -1,6 +1,6 @@
 Name:           colm
-Version:        0.13.0.5
-Release:        2%{?dist}
+Version:        0.13.0.6
+Release:        1%{?dist}
 Summary:        Programming language designed for the analysis of computer languages
 
 # aapl/ and some headers from src/ are the LGPLv2+
@@ -52,7 +52,6 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %files
 %license COPYING
 %doc ChangeLog README
-%{_docdir}/%{name}/*.html
 %{_bindir}/%{name}
 %{_libdir}/lib%{name}-%{version}.so
 %dir %{_datadir}/vim
@@ -65,6 +64,9 @@ install -p -m 0644 -D %{name}.vim %{buildroot}%{_datadir}/vim/vimfiles/syntax/%{
 %{_includedir}/%{name}/
 
 %changelog
+* Fri Jul 06 2018 Christian Glombek <lorbus@fedoraproject.org> - 0.13.0.6-1
+- Updated to version 0.13.0.6
+
 * Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.13.0.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
